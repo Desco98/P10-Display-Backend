@@ -40,3 +40,7 @@ async def set_brightness(payload: BrightnessPayload):
     if not success:
         raise HTTPException(status_code=503, detail="Failed to send brightness command via MQTT")
     return {"status": "success", "message": "Brightness command sent"}
+
+@router.get('/ping-server')
+async def ping_render_server():
+    return True
