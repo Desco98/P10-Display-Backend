@@ -11,12 +11,14 @@ class BrightnessPayload(BaseModel):
     device_id: str
     level: int = Field(..., ge=0, le=100)
 
+from typing import Optional
+
 class DeviceStatus(BaseModel):
-    ip: str = ""
-    sta_ip: str = "N/A"
-    rssi: int = 0
-    uptime: str = ""
-    freeHeap: int = 0
-    brightness: int = 0
-    currentMessage: str = ""
-    mode: str = "ap"
+    ip: Optional[str] = ""
+    sta_ip: Optional[str] = "N/A"
+    rssi: Optional[int] = 0
+    uptime: Optional[str] = ""
+    freeHeap: Optional[int] = 0
+    brightness: Optional[int] = 0
+    currentMessage: Optional[str] = ""
+    mode: Optional[str] = "ap"
